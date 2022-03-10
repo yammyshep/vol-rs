@@ -51,7 +51,7 @@ pub fn mut_app_vol(app_name: &str, mut vol: f64) {
 
             // Clip max vol to 100%
             let currentvol = app.volume.print().substring(3,6).replace(" ", "").parse::<i32>().unwrap();
-            if (currentvol + (vol*100.0) as i32 > 100) {
+            if currentvol + (vol*100.0) as i32 > 100 {
                 vol = (currentvol - 100) as f64 / 100.0;
             }
             
@@ -73,11 +73,11 @@ fn handle_vol_down() {
 }
 
 fn handle_ctrl_vol_up() {
-
+    mut_app_vol("playStream", DELTAVOL);
 }
 
 fn handle_ctrl_vol_down() {
-
+    mut_app_vol("playStream", DELTAVOL * -1.0);
 }
 
 fn main() {    
