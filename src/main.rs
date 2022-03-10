@@ -10,8 +10,7 @@ pub fn register_hotkeys() {
     let mut hotkeylistener: hotkey::Listener = hotkey::Listener::new();
 
     hotkeylistener.register_hotkey(
-        hotkey::modifiers::CONTROL | hotkey::modifiers::SHIFT |
-        hotkey::modifiers::ALT | hotkey::modifiers::SUPER,
+        0,
         hotkey::keys::INSERT,
         //hotkey::keys::ARROW_UP,
         || handle_vol_up()
@@ -19,8 +18,7 @@ pub fn register_hotkeys() {
     .unwrap();
 
     hotkeylistener.register_hotkey(
-        hotkey::modifiers::CONTROL | hotkey::modifiers::SHIFT |
-        hotkey::modifiers::ALT | hotkey::modifiers::SUPER,
+        0,
         keysym::XK_Pause,
         //hotkey::keys::ARROW_DOWN,
         || handle_vol_down()
